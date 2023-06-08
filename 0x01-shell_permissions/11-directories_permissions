@@ -1,2 +1,10 @@
 #!/bin/bash
-chmod -R ugo+x
+
+# Loop through all directories in the current directory
+for dir in */; do
+  # Check if the item is a directory
+  if [ -d "$dir" ]; then
+    # Add execute permission for the owner, group owner, and all other users
+    chmod a+x "$dir"
+  fi
+done
